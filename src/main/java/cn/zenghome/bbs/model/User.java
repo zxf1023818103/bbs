@@ -41,7 +41,8 @@ public class User implements UserDetails {
         ApplicationContext context = ContextLoader.getCurrentWebApplicationContext();
         if (context != null) {
             AuthorityRepository repository = context.getBean(AuthorityRepository.class);
-            return repository.findAllByUserId(id);
+
+            return repository.findAuthoritiesByAuthorityKey_UserId(id);
         }
         return Collections.emptyList();
     }

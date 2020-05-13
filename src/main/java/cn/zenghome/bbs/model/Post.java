@@ -1,11 +1,12 @@
 package cn.zenghome.bbs.model;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.sql.Date;
+import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.Calendar;
 
 @Data
 @Entity
@@ -17,9 +18,19 @@ public class Post {
 
     private long parentId;
 
+    private long forumId;
+
+    private long rootId;
+
     private long userId;
 
-    private Date createAt;
+    @CreationTimestamp
+    @Temporal(value = TemporalType.TIMESTAMP)
+    private Calendar createAt;
+
+    @UpdateTimestamp
+    @Temporal(value = TemporalType.TIMESTAMP)
+    private Calendar updateAt;
 
     private String title;
 

@@ -12,5 +12,7 @@ public class AuthorityKey implements Serializable, GrantedAuthority {
 
     private long userId;
 
+    private long forumId;
+
     private String authority;
 }
