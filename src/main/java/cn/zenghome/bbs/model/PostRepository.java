@@ -8,6 +8,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public interface PostRepository extends JpaRepository<Post, Long> {
 
-    Page<Post> findPostsByRootIdIsNullAndForumIdOrderByCreateAtDesc(Pageable pageable, Long forumId);
+    Page<Post> findPostsByRootIdIsNullAndForumIdOrderByPriorityDescCreateAtDesc(Pageable pageable, Long forumId);
 
 }

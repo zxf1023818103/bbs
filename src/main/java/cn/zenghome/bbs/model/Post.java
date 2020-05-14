@@ -24,6 +24,8 @@ public class Post {
 
     private long userId;
 
+    private long priority;
+
     @CreationTimestamp
     @Temporal(value = TemporalType.TIMESTAMP)
     private Calendar createAt;
